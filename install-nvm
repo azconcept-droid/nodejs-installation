@@ -1,0 +1,22 @@
+!#/usr/bin/bash
+# Date: 21/09/2024
+
+sudo apt update && sudo apt upgrade
+
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
+
+
+source ~/.bashrc
+
+# latest version
+nvm install node
+
+# any version
+# nvm install 21.6.2
+
+# set default
+# nvm use 21.6.2
+# nvm alias default 21.6.2
+
+node -v
