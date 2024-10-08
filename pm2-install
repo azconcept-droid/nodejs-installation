@@ -1,0 +1,25 @@
+
+npm install pm2 -g
+
+pm2 start ecosystem.config.js
+
+pm2 stop ecosystem.config.js
+
+# sample ecosystem.config.js
+module.exports = {
+  apps: [
+    {
+      name: "my-app",
+      script: "./app.js",
+      instances: "max",  // Auto scale based on CPU cores
+      exec_mode: "cluster",  // Cluster mode for load balancing
+      env: {
+        NODE_ENV: "development"
+      },
+      env_production: {
+        NODE_ENV: "production"
+      }
+    }
+  ]
+};
+
